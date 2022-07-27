@@ -1,0 +1,85 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: aliceblue;
+  }
+
+  .header {
+    font-size: 48px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    color: hotpink;
+    margin-bottom: 32px;
+  }
+
+  .players {
+    margin-top: 20px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+    font-weight: bold;
+    color: blue;
+  }
+
+  .game {
+    margin-top: 20px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .play {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  #result {
+    font-size: 24px;
+    color: goldenrod;
+  }
+
+  button {
+    font-size: 24px;
+    background-color: aqua;
+    border: none;
+    border-radius: 25px;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  img {
+    min-width: 100px;
+    min-height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+
+
+
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
