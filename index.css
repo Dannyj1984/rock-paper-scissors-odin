@@ -41,7 +41,7 @@ body {
 
   .player-choice {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     cursor: pointer;
     margin-bottom: 40px;
   }
@@ -82,8 +82,36 @@ body {
     max-height: 200px;
   }
 
+  .player-choice img:hover {
+    transition: transform 0.3s ease-in-out;
+    transform:  scale(1.2);
+  }
+
   #winnerText {
     display: none;
+  }
+
+  .footer {
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    color: var(--primary-light);
+    font-size: 20px;
+  }
+
+  .fa-github {
+    color: var(--primary-light);
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .fa-github:hover {
+    transform:  scale(1.4);
   }
 
 
