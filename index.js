@@ -19,7 +19,7 @@ scissorsBtn.addEventListener('click', chooseScissors)
 //If player chooses rock
 function chooseRock() {
     p1 = 1;
-    document.getElementById('chooseRock').style.border = '5px solid red'
+    document.getElementById('chooseRock').style.border = '5px solid blue'
     document.getElementById('choosePaper').style.border = 'none'
     document.getElementById('chooseScissors').style.border = 'none'
 }
@@ -36,7 +36,7 @@ function choosePaper() {
 //If player chooses scissors
 function chooseScissors() {
     p1 = 3;
-    document.getElementById('chooseScissors').style.border = '5px solid red'
+    document.getElementById('chooseScissors').style.border = '5px solid green'
     document.getElementById('choosePaper').style.border = 'none'
     document.getElementById('chooseRock').style.border = 'none'
 }
