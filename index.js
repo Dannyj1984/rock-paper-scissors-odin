@@ -1,11 +1,43 @@
 let p1 = 0;
 let p2 = 0;
+p1Score = 0;
+p2Score = 0;
+gameWinner = "";
+
+//Rock = 1
+//Paper = 2
+//Scissors = 3
+
+function chooseRock() {
+    p1 = 1;
+    console.log("rock")
+}
+
+function choosePaper() {
+    p1 = 2;
+}
+
+function chooseScissors() {
+    p1 = 3;
+}
+
+function reset() {
+    document.querySelector('.container').style.display = "block";
+    document.querySelector('#game-winner').innerHTML = "";
+    document.querySelector('#winnerText').style.display = "none";
+    winner = "";
+    p1Score = 0;
+    p2Score = 0;
+    document.getElementById('p1Score').innerHTML = p1Score;
+    document.getElementById('p2Score').innerHTML = p2Score;
+    document.getElementById('p1Img').src="img/main.jpg";
+    document.getElementById('p2Img').src="img/main.jpg";
+    document.getElementById("result").innerHTML="";
+}
 
 
 function playGame() {
-    p1 = Math.floor( Math.random() * 3 + 1);
     p2 = Math.floor( Math.random() * 3 + 1);
-    console.log(p1 + " " + p2)
     winner = "";
     draw = false;
 
@@ -13,39 +45,52 @@ function playGame() {
         draw = true;
     }
 
-    //paper beats rock
+    //p1 = rock p2 = paper
     if(p1 === 1 && p2 === 2) {
-        winner = "Player 1"
+        winner = "Player 2";
+        p2Score++;
+        document.getElementById('p2Score').innerHTML = p2Score
     }
 
+    //p1 = paper p2 = rock
     if(p1 === 2 && p2 === 1) {
-        winner = "Player 2"
+        winner = "Player 1"
+        p1Score++;
+        document.getElementById('p1Score').innerHTML = p1Score;
     }
 
-    //Rock beats scissors
+    //p1 paper p2 scissors
     if(p1 === 2 && p2 === 3) {
-        winner = "Player 1"
+        winner = "Player 2"
+        p2Score++;
+        document.getElementById('p2Score').innerHTML = p2Score
     }
 
     if(p1 === 3 && p2 === 2) {
-        winner = "Player 2"
+        winner = "Player 1"
+        p1Score++;
+        document.getElementById('p1Score').innerHTML = p1Score;
     }
 
     //scissors beats paper
     if(p1 === 3 && p2 === 1) {
-        winner = "Player 1"
+        winner = "Player 2"
+        p2Score++;
+        document.getElementById('p2Score').innerHTML = p2Score
     }
 
     if(p1 === 1 && p2 === 3) {
-        winner = "Player 2"
+        winner = "Player 1"
+        p1Score++;
+        document.getElementById('p1Score').innerHTML = p1Score;
     }
 
     switch (p1) {
         case 1:
-            document.getElementById('p1Img').src="img/paper.png";
+            document.getElementById('p1Img').src="img/rock.png";
             break;
         case 2:
-            document.getElementById('p1Img').src="img/rock.png";
+            document.getElementById('p1Img').src="img/paper.png";
             break;
         case 3:
             document.getElementById('p1Img').src="img/scissors.png";
@@ -56,10 +101,10 @@ function playGame() {
 
     switch (p2) {
         case 1:
-            document.getElementById('p2Img').src="img/paper.png";
+            document.getElementById('p2Img').src="img/rock.png";
             break;
         case 2:
-            document.getElementById('p2Img').src="img/rock.png";
+            document.getElementById('p2Img').src="img/paper.png";
             break;
         case 3:
             document.getElementById('p2Img').src="img/scissors.png";
@@ -72,6 +117,21 @@ function playGame() {
     } else {
         document.getElementById("result").innerHTML="Winner is " + winner;
     }
+
+    if(p1Score === 5 || p2Score === 5) {
+        if(p1Score === 5) {
+            winner = "Player 1";
+        }
+
+        if(p2Score === 5) {
+            winner = "Player 2";
+        }
+        document.querySelector('.container').style.display = "none";
+        document.querySelector('#game-winner').innerHTML = "Winner is " + winner;
+        document.querySelector('#winnerText').style.display = "block";
+    }
+
+    
     
 
 }

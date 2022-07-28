@@ -10,6 +10,11 @@
     </head>
     <body>
 
+        <div id="winnerText">
+            <h1 id="game-winner"></h1>
+            <button onclick="reset()">Reset</button>
+        </div>
+
         <div class="container">
             <div class="header">
                 <div>Rock Paper Scissors</div>
@@ -18,11 +23,11 @@
 
             <div class="players">
                 <div class="player">
-                    Player 1
+                    Player 1 - <span id="p1Score" class="score">0</span>
                 </div>
                 <p id="result"></p>
                 <div class="player">
-                    Player 2
+                    Player 2 - <span id="p2Score" class="score">0</span>
                 </div>
             </div>
             
@@ -33,6 +38,21 @@
                 </div>
                 <div class="img">
                     <img id="p2Img" src="img/main.jpg" alt="main image">
+                </div>
+            </div>
+
+            <hr />
+            <div  class="title">Choose your weapon</div>
+            <div class="player-choice">
+                
+                <div>
+                    <img id="chooseRock" onclick="chooseRock()" src="img/rock.png" alt="rock">
+                </div>
+                <div>
+                    <img id="choosePaper" onclick="choosePaper()" src="img/paper.png" alt="paper">
+                </div>  
+                <div>
+                    <img id="chooseScissors" onclick="chooseScissors()" src="img/scissors.png" alt="scissors">
                 </div>
             </div>
 
