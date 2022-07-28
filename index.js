@@ -10,15 +10,23 @@ gameWinner = "";
 
 function chooseRock() {
     p1 = 1;
-    console.log("rock")
+    document.getElementById('chooseRock').style.border = '5px solid red'
+    document.getElementById('choosePaper').style.border = 'none'
+    document.getElementById('chooseScissors').style.border = 'none'
 }
 
 function choosePaper() {
     p1 = 2;
+    document.getElementById('choosePaper').style.border = '5px solid red'
+    document.getElementById('chooseRock').style.border = 'none'
+    document.getElementById('chooseScissors').style.border = 'none'
 }
 
 function chooseScissors() {
     p1 = 3;
+    document.getElementById('chooseScissors').style.border = '5px solid red'
+    document.getElementById('choosePaper').style.border = 'none'
+    document.getElementById('chooseRock').style.border = 'none'
 }
 
 function reset() {
@@ -37,6 +45,9 @@ function reset() {
 
 
 function playGame() {
+    document.getElementById('chooseRock').style.border = 'none'
+    document.getElementById('choosePaper').style.border = 'none'
+    document.getElementById('chooseScissors').style.border = 'none'
     p2 = Math.floor( Math.random() * 3 + 1);
     winner = "";
     draw = false;
